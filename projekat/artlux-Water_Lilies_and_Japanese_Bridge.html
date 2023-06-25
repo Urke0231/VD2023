@@ -103,7 +103,7 @@
 
       </div>
     </section>
-    <section class="book-a-table ms-5" id='Ponude'>
+    <section class="book-a-table ms-5 Ponude" id='Ponude'>
       <form action="" role="form" class="php-email-form" >
         <div class="container">
         <div class="row">
@@ -122,7 +122,7 @@
         
       </form>
     </section>
-    <section class="book-a-table">
+    <section class="book-a-table ">
       <div class="container">
         <h3>Ponude</h3><hr>
         <table id="ZAB">
@@ -131,7 +131,7 @@
 
       </div>
     </section>
-    <section class="book-a-table ms-5" id='Ponude' >
+    <section class="book-a-table ms-5 Ponude" id='Ponude' >
       <form action="" role="form" class="php-email-form" >
         <div class="container">
         <div class="row">
@@ -228,11 +228,13 @@
           $("#Ponude").attr('hidden',true);
           $("#Mesto").attr('hidden',true)
           $("#Mesto1").attr('hidden',true)
+          $(".Ponude").attr('hidden',true)
       }
       else{
        $("#Ponude").attr('hidden',false);
           $("#Mesto").attr('hidden',true)
           $("#Mesto1").attr('hidden',true)
+          $(".Ponude").attr('hidden',false)
       }
           Lista=JSON.parse (localStorage.getItem("Ponude"));
           Komentari=JSON.parse (localStorage.getItem("Komentari"));
