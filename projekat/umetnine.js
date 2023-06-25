@@ -3,23 +3,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let images = {
         'The Icon of Impressionisms': {
             image:'img/Claude_Monet_-_Water_Lilies_and_Japanese_Bridge-768x768.jpg',
-            artist:'Claude Monet'
+            artist:'Claude Monet',
+            link:'./artlux-Water_Lilies_and_Japanese_Bridge.html'
         },
         'The Basket of Apples': {
             image:'img/Paul_Cezanne_The_Basket_of_Apples-768x615.jpg',
-            artist:'Paul Cezane'
+            artist:'Paul Cezane',
+            link:'./artlux-The_Basket_of_Apples.html'
         },
         'Magic and Myth Arise':{
             image:'img/kwan-6.jpg',
-            artist: 'Kristin Kwan'
+            artist: 'Kristin Kwan',
+            link:'./artlux-Magic_and_Myth_Arise.html'
         } ,
         'The Birth of Venus' : {
             image:'img/the_birty_of_venus.jpg',
-            artist:'Sandro Botticelli'
+            artist:'Sandro Botticelli',
+            link:'./artlux-the_birty_of_venus.html'
         },
     };
-
-    function createImageCard(title, imageUrl, artist) {
+    localStorage.setItem("SveSlike",JSON.stringify(images))
+    function createImageCard(title, imageUrl, artist,link) {
         let td = document.createElement('td'); // kreiramo ćeliju
 
         let card = document.createElement('div');
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         linkDiv.className = 'card-body text-center';
 
         let cardLink = document.createElement('a');
-        cardLink.href = '#';
+        cardLink.href = link;
         cardLink.className = 'card-link';
         cardLink.textContent = 'Pogledajte više';
         linkDiv.appendChild(cardLink);
@@ -78,7 +82,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     for(let imageTitle in images) {
         let imageInfo = images[imageTitle];
-        let cell = createImageCard(imageTitle, imageInfo.image, imageInfo.artist);
+        let cell = createImageCard(imageTitle, imageInfo.image, imageInfo.artist,imageInfo.link);
         tableRow.appendChild(cell);
         
         imageCounter++;
