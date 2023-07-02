@@ -54,24 +54,25 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         
         <ul class="navbar-nav d-flex">
-          <li class="nav-item mx-4"><a class="nav-link scrollto " href="index.html">Početna strana</a></li>
-          <li class="dropdown nav-item mx-5"><a class="nav-link scrollto" href="#"><span>Umetnine</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="nav-item mx-4"><a class="nav-link scrollto Pocetna " href="index.html">Početna strana</a></li>
+          <li class="dropdown nav-item mx-5"><a class="nav-link scrollto " href="#"><span class="Um">Umetnine</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="artlux-slike.html?artType=Slike" class="umetnine">Slike</a></li>
-              <li><a href="artlux-slike.html?artType=Skulpture" class="umetnine">Skulpture</a></li>
-              <li><a href="artlux-slike.html?artType=Ostale umetnine" class="umetnine">Ostale umetnine</a></li>
+                <li><a href="artlux-slike.html?artType=Slike" class="umetnine Slike">Slike</a></li>
+                <li><a href="artlux-slike.html?artType=Skulpture" class="umetnine Skulpture">Skulpture</a></li>
+                <li><a href="artlux-slike.html?artType=Ostale umetnine" class="umetnine Ostale">Ostale umetnine</a></li>
             </ul>
           </li>
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-umetnici.html">Umetnici</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto Umetnici" href="./artlux-umetnici.html">Umetnici</a></li>
           
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-Onama.html">O nama</a></li>
-          <li class="nav-item mx-4"><a class="nav-link scrollto active" href="./artlux-MojProfil.html">Moj profil</a> <a class="nav-link odjava" onclick="Odjavi()" hidden>Odjavi se</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto Onama" href="./artlux-Onama.html">O nama</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto MojProfil active" href="./artlux-MojProfil.html">Moj profil</a> <a class="nav-link odjava" onclick="Odjavi()" hidden>Odjavi se</a></li>
           
         </ul>
       </nav>
   
     </div>
   </header>
+ 
 
   
   <div class="breadcrumb">
@@ -134,31 +135,8 @@
 </section><!-- End Hero -->
 
     <!-- ======= Hero Section ======= -->
-    <main id="main">
-
-      <section id="ZAB" class="book-a-table">
-         <div class="container" >
-   
-           
-   
-         </div>
-       </section>
-   </main>
-  <footer id="footer">
- 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><footer class="bg-light text-center text-lg-start">
+    
+    <footer class="bg-light text-center text-lg-start">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       <div class="text-dark">Copyright 2023: Milena Jovanović i Uroš Milenković, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu</div>
@@ -214,6 +192,23 @@
     
     
     $(document).ready(function(){
+      if(localStorage.getItem('jezik')=='en'){
+    $('.MojProfil').text('Profile')
+    $('.Slike').text('Paintings')
+    $('.Skulpture').text('Sculptures')
+    $('.Ostale').text('Other')
+    $('.Onama').text('About')
+    $('.Umetnici').text('Artists')
+    $('.Um').text('Art')
+    $('.Pocetna').text('Home')
+    $('.Komentari1').text('Comments')
+    $('.Ponude1').text('Current bids')
+    $('.odjava').text('Logout')
+    $('#Nesto1').text('Comment')
+    $('#NoviKomentar').attr('placeholder','Leave your comment here')
+    $('#Nesto').text('Bid')
+    $('#Cena').attr('placeholder','Leave your offer here')
+  }
        
         if(localStorage.getItem("Trenutni")==null || localStorage.getItem("Trenutni")==''){
             $("#Forme").attr('hidden',false);
@@ -229,16 +224,19 @@
             $(".odjava").attr('hidden',false)
             Lista=JSON.parse (localStorage.getItem("Ponude"));
             Komentari=JSON.parse (localStorage.getItem("Komentari"));
-            
+            if(localStorage.getItem('jezik')=='en'){
+            sveStvari=JSON.parse(localStorage.getItem('paintings1'))}
+            else{sveStvari=JSON.parse(localStorage.getItem('paintings'))}
             trenutni=JSON.parse(localStorage.getItem("Trenutni"));
             if(Lista==null || Lista.length==0){alert("AAA")}
             else{
               for(var i =0;i<Lista.length;i++)
                 if(Lista[i].user==trenutni.username){
+                  x=sveStvari.find(stvar=>stvar.id==Lista[i].stvar).name
                   var tr=$("<tr></tr>")
-                  var text="<td style='text-align:center; vertical-align: middle; padding:10px;'>"+Lista[i].stvar+":</td>"
+                  var text="<td style='text-align:center; vertical-align: middle; padding:10px;'>"+x+":</td>"
                    var text2="<td style='text-align:center; vertical-align: middle; padding:10px;'>" +Lista[i].ponuda+ "</td>"
-                    var mex="<input type='hidden' id='hidden"+i+"'value='"+Lista[i].stvar+"'><input type='hidden' id='0hidden"+i+"'value='"+Lista[i].ponuda+"'>"+"</td>";
+                    var mex="<input type='hidden' id='hidden"+i+"'value='"+x+"'><input type='hidden' id='0hidden"+i+"'value='"+Lista[i].ponuda+"'>"+"</td>";
                     
                   var dugme=$("<button class='btn btn-outline-secondary'>Ukloni</button>").attr('id',i)
                   var polje=$("<td></td>").append(dugme);

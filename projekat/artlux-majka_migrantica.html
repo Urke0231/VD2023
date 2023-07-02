@@ -71,15 +71,13 @@
     </div>
   </header>
 
-  <div class="breadcrumb">
-    &nbsp;<a href="/">Početna</a> 
-  </div>
+  
  <!-- ======= Hero Section ======= -->
 
  <section id="hero" class="d-flex align-items-center">
   <div class="container position-relative text-center text-lg-start" >
     <div class="row">
-      <div class="col-lg-9 col-md-12" id='Forme'>
+      <div class="col-lg-9 col-md-12" id='Forme'>  <div class="godina" style=""></div>
         <img class='postaviSliku' src="">
   </div><div class="col-lg-3 col-md-12 opis" style="text-align: center;align-items: center; display: flex;">
     
@@ -154,22 +152,7 @@
 
     <input type="hidden" value="6" id="OvaUmetnina">
 </main>
-  <footer id="footer">
-    
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><footer class="bg-light text-center text-lg-start">
+  <footer class="bg-light text-center text-lg-start">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       <div class="text-dark">Copyright 2023: Milena Jovanović i Uroš Milenković, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu</div>
@@ -179,122 +162,6 @@
 </body>
 </html>
 
-<script> 
- function MenjajJezik(string){
-      localStorage.setItem('jezik',string)
-    }
-  function Odjavi(){
- localStorage.setItem('Trenutni','');location.reload();
-} 
- function Ponudi(){
-   if(localStorage.getItem("Ponude")==null ||JSON.parse(localStorage.getItem("Ponude")).length==0 ){
-     user1=JSON.parse(localStorage.getItem("Trenutni"));
-     let date=new Date();
-    
-     Ponude=[{stvar:document.getElementById('OvaUmetnina').value,ponuda:document.getElementById('Cena').value,user:user1.username,vreme:date}]
-     localStorage.setItem("Ponude",JSON.stringify(Ponude));
-     location.reload()
-   }
-   else{
-     user1=JSON.parse(localStorage.getItem("Trenutni"));
-     let date=new Date();
-     Ponude={stvar:document.getElementById('OvaUmetnina').value,ponuda:document.getElementById('Cena').value,user:user1.username,vreme:date}
-     sve=JSON.parse(localStorage.getItem("Ponude"))
-     sve.push(Ponude)
-     localStorage.setItem("Ponude",JSON.stringify(sve));
-     location.reload()
-   }
- }
- function Objavi(){
-   if(localStorage.getItem("Komentari")==null ||JSON.parse(localStorage.getItem("Komentari")).length==0 ){
-     user1=JSON.parse(localStorage.getItem("Trenutni"));
-    
-    
-     Ponude=[{user:user1.username,stvar:document.getElementById('OvaUmetnina').value,komentar:document.getElementById('NoviKomentar').value}]
-     localStorage.setItem("Komentari",JSON.stringify(Ponude));
-     location.reload()
-   }
-   else{
-     user1=JSON.parse(localStorage.getItem("Trenutni"));
-     Ponude={user:user1.username,stvar:document.getElementById('OvaUmetnina').value,komentar:document.getElementById('NoviKomentar').value}
-     sve=JSON.parse(localStorage.getItem("Komentari"))
-     sve.push(Ponude)
-     localStorage.setItem("Komentari",JSON.stringify(sve));
-     location.reload()
-   }
- }
-
-  $(document).ready(function(){
-    if(localStorage.getItem('jezik')=='en'){
-      $('.MojProfil').text('Profile')
-      $('.Slike').text('Paintings')
-      $('.Skulpture').text('Sculptures')
-      $('.Ostale').text('Other')
-      $('.Onama').text('About')
-      $('.Umetnici').text('Artists')
-      $('.Um').text('Art')
-      $('.Pocetna').text('Home')
-      $('.Komentari1').text('Comments')
-      $('.Ponude1').text('Current bids')
-      $('#Nesto1').text('Comment')
-      $('#NoviKomentar').attr('placeholder','Leave your comment here')
-      $('#Nesto').text('Bid')
-      $('#Cena').attr('placeholder','Leave your offer here')
-    }
-   if(localStorage.getItem("Trenutni")==null || localStorage.getItem("Trenutni")==''){
-          $("#Ponude").attr('hidden',true);
-          $("#Mesto").attr('hidden',true)
-          $("#Mesto1").attr('hidden',true)
-          $(".Ponude").attr('hidden',true)
-      }
-      else{
-       $("#Ponude").attr('hidden',false);
-          $("#Mesto").attr('hidden',true)
-          $("#Mesto1").attr('hidden',true)
-          $(".Ponude").attr('hidden',false)
-      }
-          Lista=JSON.parse (localStorage.getItem("Ponude"));
-          Komentari=JSON.parse (localStorage.getItem("Komentari"));
-          
-          trenutni=document.getElementById('OvaUmetnina').value
-            if(localStorage.getItem('jezik')=='sr'){
-            sveslike=JSON.parse(localStorage.getItem('paintings'))}
-            else{
-              sveslike=JSON.parse(localStorage.getItem('paintings1'))
-            }
-            for(let i=0;i<sveslike.length;i++){
-                if(sveslike[i].id==trenutni){
-                    $(".postaviSliku").attr('src',sveslike[i].image)
-                    $(".opis").append(sveslike[i].description)
-                    $
-                }
-            }
-          if(Lista==null || Lista.length==0){alert("AAA")}
-          else{
-            for(var i =0;i<Lista.length;i++)
-              if(Lista[i].stvar==trenutni){
-                var text="<tr><td>"+Lista[i].user+":</td><td>" +Lista[i].ponuda+ "</td><td>"
-                  var mex="<input type='hidden' id='hidden"+i+"'value='"+Lista[i].stvar+"'><input type='hidden' id='0hidden"+i+"'value='"+Lista[i].ponuda+"'>"+"</td>";
-               
-                $("#ZAB").append(text).append(mex);
-              } 
-            
-          }
-          if(Komentari==null || Komentari.length==0){alert("AAA")}
-          else{
-            for(var i =0;i<Komentari.length;i++)
-              if(Komentari[i].stvar==trenutni){
-                var text="<tr><td>"+Komentari[i].user+":</td><td>" +Komentari[i].komentar+ "</td><td>"
-                  var mex="</td>";
-               
-                $("#ZAB1").append(text).append(mex);
-                
-              } 
-            
-          }
-
-         
-// jQuery methods go here...
-
-});
+<script src="./js/index.js"> 
+ 
 </script>

@@ -115,7 +115,7 @@ const artists = [
 
     },
     {
-        name: 'Mikelanđelo Buonaroti',
+        name: 'Mikelandjelo Buonaroti',
         image:'img/michelangelo.jpg',
         description:'Mikelanđelo di Lodoviko Buonaroti Simoni (6. mart 1475 – 18. februar 1564), poznat kao Mikelanđelo, bio je italijanski vajar, slikar, arhitekta i pesnik visoke renesanse. Rođen u Firentinskoj Republici, njegov rad je inspirisan modelima iz klasične antike i imao je trajan uticaj na zapadnu umetnost.'
 
