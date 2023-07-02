@@ -36,7 +36,7 @@ const paintings = [
         name: "Madonna of Bruges",
         year: 1501,
         description:'Marble sculpture of virgin Mary with little Jesus', 
-        image:'img/Madonna_michelangelo',
+        image:'img/Madonna_michelangelo.jpg',
         artist:'Michelangelo Buonarroti',
         link:'./artlux-madonna_of_bruges.html'
     },
@@ -56,7 +56,7 @@ const paintings = [
         name: "Ecstasy of Saint Teresa",
         year: 1503,
         description:'Sculptural group in white marble set', 
-        image:'img/ecstasy_of_saint_teresa',
+        image:'img/ecstasy_of_saint_teresa.jpg',
         artist:'Gian Lorenzo Bernini',
         link:'./artlux-ecstasy_of_saint_teresa.html'
     },
@@ -153,11 +153,11 @@ $(document).ready(function(){
     //ucitavanje svih init podataka u localStorage
 
     //umetnine - slike
-    if(localStorage.getItem("paintings") == null){
-        localStorage.setItem("paintings", JSON.stringify(paintings));
+    if(localStorage.getItem("paintings1") == null){
+        localStorage.setItem("paintings1", JSON.stringify(paintings));
     }
-    if(localStorage.getItem("artists") == null){
-        localStorage.setItem("artists", JSON.stringify(artists));
+    if(localStorage.getItem("artists1") == null){
+        localStorage.setItem("artists1", JSON.stringify(artists));
     }
    
     

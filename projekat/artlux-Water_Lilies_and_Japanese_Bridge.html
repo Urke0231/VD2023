@@ -37,13 +37,12 @@
     <div class="container d-flex justify-content-end">
       <div class="languages d-none d-md-flex align-items-center">
         <ul>
-          <li>En</li>
-          <li><a href="#">De</a></li>
+          <li onclick="MenjajJezik('en')"><a href="">En</a></li>
+          <li onclick="MenjajJezik('sr')"><a href="">Sr</a></li>
         </ul>
       </div>
     </div>
   </div>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
@@ -53,18 +52,18 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         
         <ul class="navbar-nav d-flex">
-          <li class="nav-item mx-4"><a class="nav-link scrollto active" href="index.html">Početna strana</a></li>
-          <li class="dropdown nav-item mx-5"><a class="nav-link scrollto" href="#"><span>Umetnine</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="nav-item mx-4"><a class="nav-link scrollto Pocetna" href="index.html">Početna strana</a></li>
+          <li class="dropdown nav-item mx-5"><a class="nav-link scrollto active" href="#"><span class="Um">Umetnine</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="artlux-slike.html">Slike</a></li>
-              <li><a href="artlux-skulture.html">Skulpture</a></li>
-              <li><a href="artlux-ostale_umetnine.html">Ostale umetnine</a></li>
+                <li><a href="artlux-slike.html?artType=Slike" class="umetnine Slike">Slike</a></li>
+                <li><a href="artlux-slike.html?artType=Skulpture" class="umetnine Skulpture">Skulpture</a></li>
+                <li><a href="artlux-slike.html?artType=Ostale umetnine" class="umetnine Ostale">Ostale umetnine</a></li>
             </ul>
           </li>
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="#menu">Umetnici</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto Umetnici" href="./artlux-umetnici.html">Umetnici</a></li>
           
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="#events">O nama</a></li>
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-MojProfil.html">Moj profil</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto Onama" href="./artlux-Onama.html">O nama</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto MojProfil" href="./artlux-MojProfil.html">Moj profil</a></li>
           
         </ul>
       </nav>
@@ -81,9 +80,8 @@
   <div class="container position-relative text-center text-lg-start" >
     <div class="row">
       <div class="col-lg-9 col-md-12" id='Forme'>
-        <img src="img/Claude_Monet_-_Water_Lilies_and_Japanese_Bridge-768x768.jpg">
-  </div><div class="col-lg-3 col-md-12" style="text-align: center;">
-    Opis 
+        <img class='postaviSliku' src="">
+  </div><div class="col-lg-3 col-md-12 opis" style="text-align: center;align-items: center; display: flex;">
     
     
 
@@ -96,7 +94,7 @@
 
    <section class="book-a-table">
       <div class="container" id="KomentariOvde" >
-        <h3>Komentari</h3><hr>
+        <h3 class="Komentari1">Komentari</h3><hr>
         <table id="ZAB1">
 
         </table>
@@ -112,7 +110,7 @@
            
           </div>
           
-          <div class="col-lg-6 col-md-6 form-group md-mt-3 text-center"><button type="button" id="Nesto" onclick="Objavi()" class="btn btn-warning">Objavi</button></div>
+          <div class="col-lg-6 col-md-6 form-group md-mt-3 text-center"><button type="button" id="Nesto1" onclick="Objavi()" class="btn btn-warning">Objavi</button></div>
         </div>
         </div>
         </div>
@@ -124,7 +122,7 @@
     </section>
     <section class="book-a-table ">
       <div class="container">
-        <h3>Ponude</h3><hr>
+        <h3 class="Ponude1">Ponude</h3><hr>
         <table id="ZAB">
 
         </table>
@@ -154,7 +152,7 @@
     
     
 
-    <input type="hidden" value="The Icon of Impressionisms" id="OvaUmetnina">
+    <input type="hidden" value="0" id="OvaUmetnina">
 </main>
   <footer id="footer">
     
@@ -182,6 +180,9 @@
 </html>
 
 <script> 
+ function MenjajJezik(string){
+      localStorage.setItem('jezik',string)
+    }
   function Odjavi(){
  localStorage.setItem('Trenutni','');location.reload();
 } 
@@ -196,7 +197,8 @@
    }
    else{
      user1=JSON.parse(localStorage.getItem("Trenutni"));
-     Ponude={stvar:document.getElementById('OvaUmetnina').value,ponuda:document.getElementById('Cena').value,user:user1.username}
+     let date=new Date();
+     Ponude={stvar:document.getElementById('OvaUmetnina').value,ponuda:document.getElementById('Cena').value,user:user1.username,vreme:date}
      sve=JSON.parse(localStorage.getItem("Ponude"))
      sve.push(Ponude)
      localStorage.setItem("Ponude",JSON.stringify(sve));
@@ -223,7 +225,22 @@
  }
 
   $(document).ready(function(){
-    
+    if(localStorage.getItem('jezik')=='en'){
+      $('.MojProfil').text('Profile')
+      $('.Slike').text('Paintings')
+      $('.Skulpture').text('Sculptures')
+      $('.Ostale').text('Other')
+      $('.Onama').text('About')
+      $('.Umetnici').text('Artists')
+      $('.Um').text('Art')
+      $('.Pocetna').text('Home')
+      $('.Komentari1').text('Comments')
+      $('.Ponude1').text('Current bids')
+      $('#Nesto1').text('Comment')
+      $('#NoviKomentar').attr('placeholder','Leave your comment here')
+      $('#Nesto').text('Bid')
+      $('#Cena').attr('placeholder','Leave your offer here')
+    }
    if(localStorage.getItem("Trenutni")==null || localStorage.getItem("Trenutni")==''){
           $("#Ponude").attr('hidden',true);
           $("#Mesto").attr('hidden',true)
@@ -240,7 +257,18 @@
           Komentari=JSON.parse (localStorage.getItem("Komentari"));
           
           trenutni=document.getElementById('OvaUmetnina').value
-         
+            if(localStorage.getItem('jezik')=='sr'){
+            sveslike=JSON.parse(localStorage.getItem('paintings'))}
+            else{
+              sveslike=JSON.parse(localStorage.getItem('paintings1'))
+            }
+            for(let i=0;i<sveslike.length;i++){
+                if(sveslike[i].id==trenutni){
+                    $(".postaviSliku").attr('src',sveslike[i].image)
+                    $(".opis").append(sveslike[i].description)
+                    $
+                }
+            }
           if(Lista==null || Lista.length==0){alert("AAA")}
           else{
             for(var i =0;i<Lista.length;i++)
@@ -265,8 +293,7 @@
             
           }
 
-      
-      
+         
 // jQuery methods go here...
 
 });

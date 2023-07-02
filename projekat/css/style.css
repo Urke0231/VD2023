@@ -2136,4 +2136,11 @@ button.primary {
   font-weight: bold;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+ 
+}
+/* Smanjiti 400k slike koje imamo*/
+.postaviSliku{
+  max-width: 90%;
+  max-height: 90%;
 }
