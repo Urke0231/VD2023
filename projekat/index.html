@@ -26,7 +26,8 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
-  <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/index.js"></script>
 
 </head>
 <body>
@@ -44,7 +45,7 @@
   </div>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header-fix" class="fixed-top d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
   
       <h1 class="logo me-auto me-lg-0"><a href="index.html">ART&LUX &nbsp;<img src="img/logo.png" alt="" class="img-fluid"></a></h1>
@@ -53,18 +54,17 @@
         
         <ul class="navbar-nav d-flex">
           <li class="nav-item mx-4"><a class="nav-link scrollto active" href="index.html">Početna strana</a></li>
-          <li class="dropdown nav-item mx-5"><a class="nav-link scrollto" href="#"><span>Umetnine</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown nav-item mx-auto"><a class="nav-link scrollto" href="#"><span>Umetnine</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="artlux-slike.html?artType=painting">Slike</a></li>
-              <li><a href="artlux-skulture.html">Skulpture</a></li>
-              <li><a href="artlux-ostale_umetnine.html">Ostale umetnine</a></li>
+              <li><a href="artlux-slike.html?artType=Slike" class="umetnine">Slike</a></li>
+              <li><a href="artlux-slike.html?artType=Skulpture" class="umetnine">Skulpture</a></li>
+              <li><a href="artlux-slike.html?artType=Ostale umetnine" class="umetnine">Ostale umetnine</a></li>
             </ul>
           </li>
           <li class="nav-item mx-4"><a class="nav-link scrollto" href="artlux-umetnici.html">Umetnici</a></li>
-          
           <li class="nav-item mx-4"><a class="nav-link scrollto" href="#events">O nama</a></li>
           <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-MojProfil.html">Moj profil</a></li>
-          
+          <!--<li class="nav-item mx-4"><a class="nav-link scrollto" href="index-rs.html"><span class="fi fi-rs"></span></a></li> -->
         </ul>
       </nav>
   
@@ -72,7 +72,7 @@
   </header>
 
   <div class="breadcrumb">
-    &nbsp;<a href="/">Početna</a> 
+    pocetna
   </div>
  <!-- ======= Hero Section ======= -->
 
@@ -160,5 +160,6 @@
     </div>
     <!-- Copyright -->
   </footer>
+
 </body>
 </html>
