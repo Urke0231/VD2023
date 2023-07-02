@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ARTLUX-umetnine</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/logo.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+  
+
+</head>
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-end">
+      <div class="languages d-none d-md-flex align-items-center">
+        <ul>
+          <li>En</li>
+          <li><a href="#">De</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+  
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">ART&LUX &nbsp;<img src="img/logo.png" alt="" class="img-fluid"></a></h1>
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        
+        <ul class="navbar-nav d-flex">
+          <li class="nav-item mx-4"><a class="nav-link scrollto active" href="index.html">Početna strana</a></li>
+          <li class="dropdown nav-item mx-5"><a class="nav-link scrollto" href="#"><span>Umetnine</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="artlux-slike.html">Slike</a></li>
+              <li><a href="artlux-skulture.html">Skulpture</a></li>
+              <li><a href="artlux-ostale_umetnine.html">Ostale umetnine</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="#menu">Umetnici</a></li>
+          
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="#events">O nama</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-MojProfil.html">Moj profil</a></li>
+          
+        </ul>
+      </nav>
+  
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    &nbsp;<a href="/">Početna</a> 
+  </div>
+ <!-- ======= Hero Section ======= -->
+
+ <section id="hero" class="d-flex align-items-center">
+  <div class="container position-relative text-center text-lg-start" >
+    <div class="row">
+      <div class="col-lg-9 col-md-12" id='Forme'>
+        <img src="img/Claude_Monet_-_Water_Lilies_and_Japanese_Bridge-768x768.jpg">
+  </div><div class="col-lg-3 col-md-12" style="text-align: center;">
+    Opis 
+    
+    
+
+    
+  </div></div></div>
+</section><!-- End Hero -->
+
+<!-- ======= Hero Section ======= -->
+<main id="main">
+
+   <section class="book-a-table">
+      <div class="container" id="KomentariOvde" >
+        <h3>Komentari</h3><hr>
+        <table id="ZAB1">
+
+        </table>
+
+      </div>
+    </section>
+    <section class="book-a-table ms-5 Ponude" id='Ponude'>
+      <form action="" role="form" class="php-email-form" >
+        <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 form-group">
+            <input type="text" name="NoviKomentar" class="form-control" id="NoviKomentar" placeholder="Ostavite komentar" data-rule="minlen:1">
+           
+          </div>
+          
+          <div class="col-lg-6 col-md-6 form-group md-mt-3 text-center"><button type="button" id="Nesto" onclick="Objavi()" class="btn btn-warning">Objavi</button></div>
+        </div>
+        </div>
+        </div>
+        
+        
+          
+        
+      </form>
+    </section>
+    <section class="book-a-table ">
+      <div class="container">
+        <h3>Ponude</h3><hr>
+        <table id="ZAB">
+
+        </table>
+
+      </div>
+    </section>
+    <section class="book-a-table ms-5 Ponude" id='Ponude' >
+      <form action="" role="form" class="php-email-form" >
+        <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 form-group">
+            <input type="number" name="name" class="form-control" id="Cena" placeholder="Unesite vasu ponudu" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+           
+          </div>
+          
+          <div class="col-lg-6 col-md-6 form-group md-mt-3 text-center"><button type="button" id="Nesto" onclick="Ponudi()" class="btn btn-warning">Ponudi</button></div>
+        </div>
+        </div>
+        </div>
+        
+        
+          
+        
+      </form>
+    </section>
+   
+    
+    
+
+    <input type="hidden" value="The Icon of Impressionisms" id="OvaUmetnina">
+</main>
+  <footer id="footer">
+    
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <div class="text-dark">Copyright 2023: Milena Jovanović i Uroš Milenković, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu</div>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+</html>
+
+<script> 
+  function Odjavi(){
+ localStorage.setItem('Trenutni','');location.reload();
+} 
+ function Ponudi(){
+   if(localStorage.getItem("Ponude")==null ||JSON.parse(localStorage.getItem("Ponude")).length==0 ){
+     user1=JSON.parse(localStorage.getItem("Trenutni"));
+     let date=new Date();
+    
+     Ponude=[{stvar:document.getElementById('OvaUmetnina').value,ponuda:document.getElementById('Cena').value,user:user1.username,vreme:date}]
+     localStorage.setItem("Ponude",JSON.stringify(Ponude));
+     location.reload()
+   }
+   else{
+     user1=JSON.parse(localStorage.getItem("Trenutni"));
+     Ponude={stvar:document.getElementById('OvaUmetnina').value,ponuda:document.getElementById('Cena').value,user:user1.username}
+     sve=JSON.parse(localStorage.getItem("Ponude"))
+     sve.push(Ponude)
+     localStorage.setItem("Ponude",JSON.stringify(sve));
+     location.reload()
+   }
+ }
+ function Objavi(){
+   if(localStorage.getItem("Komentari")==null ||JSON.parse(localStorage.getItem("Komentari")).length==0 ){
+     user1=JSON.parse(localStorage.getItem("Trenutni"));
+    
+    
+     Ponude=[{user:user1.username,stvar:document.getElementById('OvaUmetnina').value,komentar:document.getElementById('NoviKomentar').value}]
+     localStorage.setItem("Komentari",JSON.stringify(Ponude));
+     location.reload()
+   }
+   else{
+     user1=JSON.parse(localStorage.getItem("Trenutni"));
+     Ponude={user:user1.username,stvar:document.getElementById('OvaUmetnina').value,komentar:document.getElementById('NoviKomentar').value}
+     sve=JSON.parse(localStorage.getItem("Komentari"))
+     sve.push(Ponude)
+     localStorage.setItem("Komentari",JSON.stringify(sve));
+     location.reload()
+   }
+ }
+
+  $(document).ready(function(){
+    
+   if(localStorage.getItem("Trenutni")==null || localStorage.getItem("Trenutni")==''){
+          $("#Ponude").attr('hidden',true);
+          $("#Mesto").attr('hidden',true)
+          $("#Mesto1").attr('hidden',true)
+          $(".Ponude").attr('hidden',true)
+      }
+      else{
+       $("#Ponude").attr('hidden',false);
+          $("#Mesto").attr('hidden',true)
+          $("#Mesto1").attr('hidden',true)
+          $(".Ponude").attr('hidden',false)
+      }
+          Lista=JSON.parse (localStorage.getItem("Ponude"));
+          Komentari=JSON.parse (localStorage.getItem("Komentari"));
+          
+          trenutni=document.getElementById('OvaUmetnina').value
+         
+          if(Lista==null || Lista.length==0){alert("AAA")}
+          else{
+            for(var i =0;i<Lista.length;i++)
+              if(Lista[i].stvar==trenutni){
+                var text="<tr><td>"+Lista[i].user+":</td><td>" +Lista[i].ponuda+ "</td><td>"
+                  var mex="<input type='hidden' id='hidden"+i+"'value='"+Lista[i].stvar+"'><input type='hidden' id='0hidden"+i+"'value='"+Lista[i].ponuda+"'>"+"</td>";
+               
+                $("#ZAB").append(text).append(mex);
+              } 
+            
+          }
+          if(Komentari==null || Komentari.length==0){alert("AAA")}
+          else{
+            for(var i =0;i<Komentari.length;i++)
+              if(Komentari[i].stvar==trenutni){
+                var text="<tr><td>"+Komentari[i].user+":</td><td>" +Komentari[i].komentar+ "</td><td>"
+                  var mex="</td>";
+               
+                $("#ZAB1").append(text).append(mex);
+                
+              } 
+            
+          }
+
+      
+      
+// jQuery methods go here...
+
+});
+</script>

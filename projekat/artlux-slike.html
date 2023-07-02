@@ -23,30 +23,21 @@
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!--<link href="vendor/flag-icons-main/css/flag-icons.min.css" rel="stylesheet" /> -->
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  <script src="umetnine.js"></script>
+
 </head>
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-end">
-      <div class="languages d-none d-md-flex align-items-center">
-        <ul>
-          <li>En</li>
-          <li><a href="#">De</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+ 
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header-fix" class="fixed-top d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
   
       <h1 class="logo me-auto me-lg-0"><a href="index.html">ART&LUX &nbsp;<img src="img/logo.png" alt="" class="img-fluid"></a></h1>
@@ -54,28 +45,25 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         
         <ul class="navbar-nav d-flex">
-          <li class="nav-item mx-5"><a class="nav-link scrollto active" href="index.html">Početna strana</a></li>
-          <li class="dropdown nav-item mx-5"><a class="nav-link scrollto" href="#"><span>Umetnine</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="nav-item mx-4"><a class="nav-link scrollto active" href="index.html">Početna strana</a></li>
+          <li class="dropdown nav-item mx-auto"><a class="nav-link scrollto" href="#"><span>Umetnine</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="artlux-slike.html">Slike</a></li>
-              <li><a href="artlux-skulture.html">Skulpture</a></li>
-              <li><a href="artlux-ostale_umetnine.html">Ostale umetnine</a></li>
+              <li><a href="artlux-slike.html">Skulpture</a></li>
+              <li><a href="artlux-slike.html">Ostale umetnine</a></li>
             </ul>
           </li>
-          <li class="nav-item mx-5"><a class="nav-link scrollto" href="#menu">Umetnici</a></li>
-          <li class="nav-item mx-5"><a class="nav-link scrollto" href="#events">O nama</a></li>
-          <li class="nav-item mx-5"><a class="nav-link scrollto" href="./artlux-MojProfil.html">Moj profil</a></li>
-
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="#menu">Umetnici</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="#events">O nama</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-MojProfil.html">Moj profil</a></li>
+          <!--<li class="nav-item mx-4"><a class="nav-link scrollto" href="index-rs.html"><span class="fi fi-rs"></span></a></li> -->
         </ul>
       </nav>
   
     </div>
   </header>
 
-  <div class="breadcrumb">
-    &nbsp;<a href="/">Umetnine ></a> 
-    &nbsp;<a href="/">Slike</a> 
-  </div>
+
  <!-- ======= Picture Section ======= -->
 
 
@@ -83,28 +71,65 @@
     <section id="events" class="events">
       <div class="container">
         <br/>
+       
         <div class="section-title">
-          <h2>SLIKE</h2>
-          <p>Pregledajte slike</p>
+          <h2 id="breadcrumbs"> 
+            <a href="/">Umetnine </a> >  </h2>
+          <p id="heading-desc">Pregledajte</p>
         </div>
-        <div id="scrollable_container" class="scrollable-container">
-        <table id="scrollable_table">
-        
-        </table>
-        
-      </div>
+
+
+        <div id="searchForm" class="row gtr-uniform gtr-50">
+											 
+          <div class="col-3">
+            <select id="name">
+              <option value="0">- Sortiranje Naziv-</option>
+              <option value="1">A - Z ↑</option>
+              <option value="2">Z - A ↓</option> 
+            </select>
+          </div> 
+          <div class="col-3">
+            <select id="artist">
+              <option value="0">- Sortiranje Ime umetnika -</option>
+              <option value="1">A - Z ↑</option>
+              <option value="2">Z - A ↓</option> 
+            </select>
+          </div> 
+          <div class="col-3 col-12-xsmall">
+            <input type="text" id="searchInput" placeholder="Pretraga">
+          </div>  
+          <div class="col-3 col-12-xsmall">
+            <input type="button" id="searchBtn" class="primary" value="Search">
+          </div>  
+        </div>
+
+        <div id="card-container" class="card-container">
+
+        </div>
+
+
       </div>
     </section>
   </main>
 
 
 
-  </footer><footer class="bg-light text-center text-lg-start">
+  <footer id="footer" class="text-center text-lg-start">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      <div class="text-dark">Copyright 2023: Milena Jovanović i Uroš Milenković, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu</div>
+      <div class="copyright">
+        © Copyright <strong><span> <strong>Milena Jovanović </strong>  i Uroš Milenković</strong>, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu</span>. <br> Sva prava zadržana
+      </div>
     </div>
     <!-- Copyright -->
   </footer>
+
+
+  <!-- Scripts -->
+    <!-- localStorage-->
+    <script src="js/data.js"></script>
+
+    <script src="js/umetnine-new.js"></script>
+
 </body>
 </html>
