@@ -7,7 +7,7 @@ function displayArtists(artists) {
             "<a href='#' class='image'><img src='" + artists[i].image
             + "' alt='" + artists[i].name + "' /></a>" +
             "<header>" +
-            "    <h2" + artists[i].name + "</h2>" +
+            "    <h2>" + artists[i].name + "</h2>" +
             "</header>" +
             "<p>" + artists[i].description + " </p>" +
             " <footer class='text-center'>" +

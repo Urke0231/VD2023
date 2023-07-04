@@ -47,7 +47,7 @@ $(document).ready(function(){
     $('.MojProfil').text('Profile')
     $('.Slike').text('Paintings').attr('href','artlux-slike-eng.html?artType=paintings')
       $('.Skulpture').text('Sculptures').attr('href','artlux-slike-eng.html?artType=sculptures')
-      $('.Ostale').text('Other').attr('href','artlux-slike-eng.html?artType=other')
+      $('.Ostale').text('Other').attr('href','artlux-slike-eng.html?artType=other artworks')
       $('.Onama').text('About').attr('href','artlux-ONama-eng.html')
     $('.Umetnici').text('Artists').attr('href','artlux-umetnici-eng.html?artType=other')
     $('.Um').text('Art')
@@ -84,7 +84,8 @@ $(document).ready(function(){
                     $(".postaviSliku").attr('src',sveslike[i].image)
                     $(".opis").append(x)
                     $(".godina").text(sveslike[i].artist+", "+sveslike[i].year+'.'+" Evaluation:"+(i+1)*1000)
-                }
+                    $("#breadcrumbs").append(sveslike[i].name);
+                  }
             }}
           else{
             sveslike=JSON.parse(localStorage.getItem('paintings'))
@@ -95,7 +96,8 @@ $(document).ready(function(){
                     $(".postaviSliku").attr('src',sveslike[i].image)
                     $(".opis").append(x)
                     $(".godina").text(sveslike[i].artist+", "+sveslike[i].year+'.'+" Procena:"+(i+1)*1000)
-                }
+                    $(".breadcrumbs").append(sveslike[i].name);
+                  }
             }
           }
          
@@ -122,7 +124,7 @@ $(document).ready(function(){
             } 
           
         }
-
+       
        
 // jQuery methods go here...
 
