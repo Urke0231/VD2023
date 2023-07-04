@@ -25,6 +25,7 @@
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!--<link href="vendor/flag-icons-main/css/flag-icons.min.css" rel="stylesheet" /> -->
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
@@ -48,19 +49,19 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
 
         <ul class="navbar-nav d-flex">
-          <li class="nav-item mx-4"><a class="nav-link scrollto " href="index.html">Početna strana</a></li>
-          <li class="dropdown nav-item mx-auto"><a class="nav-link scrollto active" href="#"><span>Umetnine</span> <i
+          <li class="nav-item mx-4"><a class="nav-link scrollto " href="index.html">Homepage</a></li>
+          <li class="dropdown nav-item mx-auto"><a class="nav-link scrollto active" href="#"><span>Artworks</span> <i
                 class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="artlux-slike.html?artType=Slike" class="umetnine">Slike</a></li>
-              <li><a href="artlux-slike.html?artType=Skulpture" class="umetnine">Skulpture</a></li>
-              <li><a href="artlux-slike.html?artType=Ostale umetnine" class="umetnine">Ostale umetnine</a></li>
+              <li><a href="artlux-slike-eng.html?artType=paintings" class="umetnine">Paintings</a></li>
+              <li><a href="artlux-slike-eng.html?artType=sculptures" class="umetnine">Sculptures</a></li>
+              <li><a href="artlux-slike-eng.html?artType=other artworks" class="umetnine">Other</a></li>
             </ul>
           </li>
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="artlux-umetnici.html">Umetnici</a></li>
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-Onama.html">O nama</a></li>
-          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-MojProfil.html">Moj profil</a></li>
-          <li class="nav-item mx-4"><a id="jezik" class="nav-link scrollto" href="artlux-slike-eng.html">en</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="artlux-umetnici-eng.html">Artists</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-Onama-eng.html">About us</a></li>
+          <li class="nav-item mx-4"><a class="nav-link scrollto" href="./artlux-MojProfil.html">My profile</a></li>
+          <li class="nav-item mx-4"><a id="jezik" class="nav-link scrollto" href="artlux-slike.html">rs</a></li>
 
         </ul>
       </nav>
@@ -79,9 +80,9 @@
 
         <div class="section-title">
           <h2 id="breadcrumbs">
-            <a href="/">Umetnine </a> >
+            <a href="/">Artworks </a> >
           </h2>
-          <p id="heading-desc">Pregledajte</p>
+          <p id="heading-desc">Browse</p>
         </div>
 
 
@@ -89,20 +90,20 @@
 
           <div class="col-3">
             <select id="name">
-              <option value="0">- Sortiranje Naziv-</option>
+              <option value="0">- Sort by Name-</option>
               <option value="1">A - Z ↑</option>
               <option value="2">Z - A ↓</option>
             </select>
           </div>
           <div class="col-3">
             <select id="artist">
-              <option value="0">- Sortiranje Ime umetnika -</option>
+              <option value="0">- Sort by Artist -</option>
               <option value="1">A - Z ↑</option>
               <option value="2">Z - A ↓</option>
             </select>
           </div>
           <div class="col-3 col-12-xsmall">
-            <input type="text" id="searchInput" placeholder="Pretraga">
+            <input type="text" id="searchInput" placeholder="Search">
           </div>
           <div class="col-3 col-12-xsmall">
             <input type="button" id="searchBtn" class="primary" value="Search">
@@ -124,19 +125,18 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       <div class="copyright">
-        © Copyright <strong><span> <strong>Milena Jovanović </strong> i Uroš Milenković</strong>, Odsek za softversko
-        inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu</span>. <br> Sva prava zadržana
+        © Copyright <strong><span> <strong>Milena Jovanović </strong>& Uroš Milenković</strong>, Department of Software
+        Engineering - Faculty of Electrical Engineering, Belgrade University</span>. <br> All rights reserved.
       </div>
     </div>
-    <!-- Copyright -->
   </footer>
 
 
   <!-- Scripts -->
   <!-- localStorage-->
-  <script src="js/data.js"></script>
+  <script src="js/data-eng.js"></script>
 
-  <script src="js/umetnine.js"></script>
+  <script src="js/umetnine-eng.js"></script>
 
 </body>
 

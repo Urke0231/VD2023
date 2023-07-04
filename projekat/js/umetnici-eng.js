@@ -12,7 +12,7 @@ function displayArtists(artists) {
             "<p>" + artists[i].description + " </p>" +
             " <footer class='text-center'>" +
             "    <ul class='actions'>" +
-            "         <li><a href='#' id='" + artists[i].id + "' class='button printPDF'>Pregledaj dela</a></li>" +
+            "         <li><a href='#' id='" + artists[i].id + "' class='button printPDF'>Artwork overview</a></li>" +
             "    </ul>" +
             "</footer>" +
             " </article>  "
@@ -23,11 +23,13 @@ function displayArtists(artists) {
 
 
 $(document).ready(function () {
-    localStorage.setItem('jezik', 'sr');
-    let allArtists = JSON.parse(localStorage.getItem("artists"));
+
+    localStorage.setItem('jezik', 'en');
+
+    let allArtists = JSON.parse(localStorage.getItem("artists1"));
     displayArtists(allArtists);
 
-    let allArt = JSON.parse(localStorage.getItem("paintings"));
+    let allArt = JSON.parse(localStorage.getItem("paintings1"));
 
     $(".printPDF").click(function () {
 

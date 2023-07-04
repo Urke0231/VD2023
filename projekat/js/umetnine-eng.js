@@ -7,9 +7,6 @@ function displayArt(art) {
     for (let i = 0; i < art.length; i++) {
         let artist = allArtists.filter(artist => artist.id == art[i].artistId)[0];
 
-        //let className = (art[i].year < 1923) ? "old" : "";
-
-
         $('#card-container').append(
             "<article>" +
             "<a href='" + art[i].link + "' class='image'><img src='" + art[i].image
@@ -21,7 +18,7 @@ function displayArt(art) {
             "<p>" + artist.name + " (" + art[i].year + ") </p>" +
             " <footer class='text-center'>" +
             "    <ul class='actions'>" +
-            "         <li><a href='" + art[i].link + "' class='button'>Pogledaj delo</a></li>" +
+            "         <li><a href='" + art[i].link + "' class='button'>See artwork</a></li>" +
             "    </ul>" +
             "</footer>" +
             " </article>  "
@@ -94,7 +91,7 @@ function sortingAge(filtered) {
 function handleSearch() {
     let urlParams = new URLSearchParams(window.location.search);
     let type = urlParams.get("artType");
-    let allArt = JSON.parse(localStorage.getItem("paintings"));
+    let allArt = JSON.parse(localStorage.getItem("paintings1"));
 
 
 
@@ -112,35 +109,35 @@ function handleSearch() {
 }
 
 
-function typeToEngType(typeName) {
+function typeToSrType(typeName) {
     switch (typeName) {
-        case "Ostale umetnine": return "other artworks";
+        case "other artworks": return "Ostale umetnine";
             break;
-        case "Slike": return "paintings";
+        case "paintings": return "Slike";
             break;
-        case "Skulpture": return "sculptures";
+        case "sculptures": return "Skulpture";
             break;
-        default: return "paintings";
+        default: return "Slike";
     }
 }
 
 $(document).ready(function () {
 
-    localStorage.setItem('jezik', 'sr');
-
-
+    localStorage.setItem('jezik', 'en');
 
     let urlParams = new URLSearchParams(window.location.search);
     let type = urlParams.get("artType");
-    let allArt = JSON.parse(localStorage.getItem("paintings"));
+    let allArt = JSON.parse(localStorage.getItem("paintings1"));
+
+    $("#breadcrumbs").append(type);
 
 
-    $("#jezik").attr("href", $("#jezik").attr("href") + "?artType=" + typeToEngType(type));
+    $("#jezik").attr("href", $("#jezik").attr("href") + "?artType=" + typeToSrType(type));
     $("#breadcrumbs").append(type);
 
     let currentArt = allArt.filter(art => art.type == type);
 
-    allArtists = JSON.parse(localStorage.getItem("artists"));
+    allArtists = JSON.parse(localStorage.getItem("artists1"));
 
     displayArt(currentArt);
 
