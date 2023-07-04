@@ -1,18 +1,21 @@
 
 let currentArt = [];
-
+let allArtists = [];
 function displayArt(art){
+   
     $('#card-container').html("");
     for(let i = 0; i < art.length; i++){ 
+        let artist = allArtists.filter(artist => artist.id == art[i].artistId)[0]; 
+        
             $('#card-container').append(
             "<article>"+
             "<a href='"+ art[i].link +"' class='image'><img src='" + art[i].image
             +"' alt='"+ art[i].name+"' /></a>"+
             "<header>"+
-            "    <h2 class='text-center'><a href='"+ art[i].link+"'>"+  art[i].name +"</a></h2>"+ 
+            "    <h2><a href='"+ art[i].link+"'>"+  art[i].name +"</a></h2>"+ 
             "</header>"+ 
-            "<p class='text-center'>" + art[i].description +" </p>"+ 
-            "<p class='text-center'>"+ art[i].artist  +" (" + art[i].year +") </p>"+ 
+            "<p>" + art[i].description +" </p>"+ 
+            "<p>"+ artist.name  +" (" + art[i].year +") </p>"+ 
             " <footer class='text-center'>"+
             "    <ul class='actions'>"+
             "         <li><a href='"+ art[i].link +"' class='button'>See article</a></li>"+
@@ -90,6 +93,9 @@ function handleSearch(){
     let type = urlParams.get("artType");  
     let allArt = JSON.parse(localStorage.getItem("paintings"));
 
+    
+
+
     let filteredArt = allArt.filter(art => art.type == type);
     let keyword = $("#searchInput").val();
 
@@ -128,6 +134,8 @@ $(document).ready(function () {
     $("#breadcrumbs").append(type);
 
     let currentArt = allArt.filter(art => art.type == type);
+
+    allArtists = JSON.parse(localStorage.getItem("artists"));
 
     displayArt(currentArt);
 
