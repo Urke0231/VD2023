@@ -193,23 +193,20 @@
     
     $(document).ready(function(){
       if(localStorage.getItem('jezik')=='en'){
-    $('.MojProfil').text('Profile')
-    $('.Slike').text('Paintings')
-    $('.Skulpture').text('Sculptures')
-    $('.Ostale').text('Other')
-    $('.Onama').text('About')
-    $('.Umetnici').text('Artists')
+        $('.MojProfil').text('Profile')
+    $('.Slike').text('Paintings').attr('href','artlux-slike-eng.html?artType=paintings')
+      $('.Skulpture').text('Sculptures').attr('href','artlux-slike-eng.html?artType=sculptures')
+      $('.Ostale').text('Other').attr('href','artlux-slike-eng.html?artType=other')
+      $('.Onama').text('About').attr('href','artlux-ONama-eng.html')
+    $('.Umetnici').text('Artists').attr('href','artlux-umetnici-eng.html?artType=other')
     $('.Um').text('Art')
     $('.Pocetna').text('Home')
     $('.Komentari1').text('Comments')
     $('.Ponude1').text('Current bids')
-    $('.odjava').text('Logout')
     $('#Nesto1').text('Comment')
     $('#NoviKomentar').attr('placeholder','Leave your comment here')
     $('#Nesto').text('Bid')
     $('#Cena').attr('placeholder','Leave your offer here')
-    $('#qq').text('Your Offers')
-    $('#qqq').text('Your Comments')
   }
        
         if(localStorage.getItem("Trenutni")==null || localStorage.getItem("Trenutni")==''){

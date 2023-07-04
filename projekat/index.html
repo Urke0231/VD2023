@@ -81,7 +81,7 @@
     <section id="hero" class="d-flex align-items-center">
       <div class="container">
         <br/>
-       
+        
         <div class="section-title" >
           <h1 id="breadcrumbs" class="Pagman " style=" text-shadow:2px 2px blue "> 
                 Aktuelne Umetnine</h1>
@@ -117,11 +117,11 @@ $(document).ready(function(){
   }
   if(localStorage.getItem('jezik')=='en'){
       $('.MojProfil').text('Profile')
-      $('.Slike').text('Paintings')
-      $('.Skulpture').text('Sculptures')
-      $('.Ostale').text('Other')
-      $('.Onama').text('About')
-      $('.Umetnici').text('Artists')
+      $('.Slike').text('Paintings').attr('href','artlux-slike-eng.html?artType=paintings')
+      $('.Skulpture').text('Sculptures').attr('href','artlux-slike-eng.html?artType=sculptures')
+      $('.Ostale').text('Other').attr('href','artlux-slike-eng.html?artType=other')
+      $('.Onama').text('About').attr('href','artlux-ONama-eng.html')
+      $('.Umetnici').text('Artists').attr('href','artlux-umetnici-eng.html?artType=other')
       $('.Um').text('Art')
       $('.Pocetna').text('Home')
       $('.Komentari1').text('Comments')
@@ -166,7 +166,7 @@ $(document).ready(function(){
   var art,artist;
   for(i=0;i<3;i++){
     if(localStorage.getItem('jezik')=='en'){
-    if(i>=e.length){
+    if(i>=e.length){break
       art=b[4];
       alert(JSON.stringify)
       artist=c.find(artist=>artist.name==art.artist);

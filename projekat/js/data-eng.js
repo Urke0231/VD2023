@@ -38,7 +38,7 @@ const paintingss1 = [
         description: 'Marble sculpture of virgin Mary with little Jesus',
         image: 'img/Madonna_michelangelo.jpg',
         artist: 'Michelangelo Buonarroti',
-        link: './artlux-madonna_of_bruges.html'
+        link: './artlux-gospa_iz_brugesa.html'
     },
     {
         id: 4,
@@ -48,7 +48,7 @@ const paintingss1 = [
         description: 'Michelangelo\'s masterpiece from the Renaissance era',
         image: 'img/David.jpg',
         artist: 'Michelangelo Buonarroti',
-        link: './artlux-david_eng.html'
+        link: './artlux-david.html'
     },
     {
         id: 5,
@@ -58,7 +58,7 @@ const paintingss1 = [
         description: 'Sculptural group in white marble set',
         image: 'img/ecstasy_of_saint_teresa.jpg',
         artist: 'Gian Lorenzo Bernini',
-        link: './artlux-ecstasy_of_saint_teresa.html'
+        link: './artlux-ekstaza_svete_tereze.html'
     },
     {
         id: 6,
@@ -68,7 +68,7 @@ const paintingss1 = [
         description: 'Iconic representation of the Great Depression',
         image: 'img/migrant_mother.jpg',
         artist: 'Dorothea Lang',
-        link: './artlux-migrant_mother.html'
+        link: './artlux-majka_migrantica.html'
     },
     {
         id: 7,
@@ -78,7 +78,7 @@ const paintingss1 = [
         description: 'An example of conceptual art',
         image: 'img/oneAndThreeChairs.jpg',
         artist: 'Joseph Koshut',
-        link: './artlux-one_and_three_chairs.html'
+        link: './artlux-jedna_i_tri_stolice.html'
 
     },
     {
@@ -89,7 +89,7 @@ const paintingss1 = [
         description: 'Classical ancient Greek style urn depicting car wrecks, mobile phones, supermodels..',
         image: 'img/grayson-perry-barbarics.jpg',
         artist: 'Grayson Perry',
-        link: './artlux-barbaric_splendor.html'
+        link: './artlux-varvarki_sjaj.html'
 
     }
 ];

@@ -45,11 +45,11 @@ function Objavi(){
 $(document).ready(function(){
   if(localStorage.getItem('jezik')=='en'){
     $('.MojProfil').text('Profile')
-    $('.Slike').text('Paintings')
-    $('.Skulpture').text('Sculptures')
-    $('.Ostale').text('Other')
-    $('.Onama').text('About')
-    $('.Umetnici').text('Artists')
+    $('.Slike').text('Paintings').attr('href','artlux-slike-eng.html?artType=paintings')
+      $('.Skulpture').text('Sculptures').attr('href','artlux-slike-eng.html?artType=sculptures')
+      $('.Ostale').text('Other').attr('href','artlux-slike-eng.html?artType=other')
+      $('.Onama').text('About').attr('href','artlux-ONama-eng.html')
+    $('.Umetnici').text('Artists').attr('href','artlux-umetnici-eng.html?artType=other')
     $('.Um').text('Art')
     $('.Pocetna').text('Home')
     $('.Komentari1').text('Comments')
@@ -83,7 +83,7 @@ $(document).ready(function(){
                    x=sviartisti.find(artist=>artist.name==sveslike[i].artist).description
                     $(".postaviSliku").attr('src',sveslike[i].image)
                     $(".opis").append(x)
-                    $(".godina").text(sveslike[i].artist+", "+sveslike[i].year+'.')
+                    $(".godina").text(sveslike[i].artist+", "+sveslike[i].year+'.'+" Evaluation:"+(i+1)*1000)
                 }
             }}
           else{
@@ -91,10 +91,10 @@ $(document).ready(function(){
             sviartisti=JSON.parse(localStorage.getItem('artists'))
             for(let i=0;i<sveslike.length;i++){
                 if(sveslike[i].id==trenutni){
-                  x=sviartisti.find(artist=>artist.name==sveslike[i].artist).description
+                  x=sviartisti.find(artist=>artist.id==sveslike[i].artistId).description
                     $(".postaviSliku").attr('src',sveslike[i].image)
                     $(".opis").append(x)
-                    $(".godina").text(sveslike[i].artist+", "+sveslike[i].year+'.')
+                    $(".godina").text(sveslike[i].artist+", "+sveslike[i].year+'.'+" Procena:"+(i+1)*1000)
                 }
             }
           }
