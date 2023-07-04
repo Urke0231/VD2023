@@ -99,7 +99,7 @@ $(document).ready(function(){
             }
           }
          
-        if(Lista==null || Lista.length==0){alert("AAA")}
+        if(Lista==null || Lista.length==0){}
         else{
           for(var i =0;i<Lista.length;i++)
             if(Lista[i].stvar==trenutni){
@@ -110,7 +110,7 @@ $(document).ready(function(){
             } 
           
         }
-        if(Komentari==null || Komentari.length==0){alert("AAA")}
+        if(Komentari==null || Komentari.length==0){}
         else{
           for(var i =0;i<Komentari.length;i++)
             if(Komentari[i].stvar==trenutni){

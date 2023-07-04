@@ -112,7 +112,7 @@
           <div class="container-fluid justify-content-center" style="text-align: center;">
             <div class="row">
           <div class=" col-lg-4 col-md-12 form-group  mt-md-0 justify-content-center" id="Mesto"hidden>
-            Vase Ponude
+            <div id='qq' style="font-size: 30px;text-shadow:2px 2px blue">Vase Ponude</div>
             <table id="ZAB" style=" margin-left: auto; margin-right: auto;">
 
             </table>
@@ -120,7 +120,7 @@
           </div>
           <div class=" col-lg-4 col-md-12form-group  mt-md-0 justify-content-center"><br><br><br></div>
           <div class=" col-lg-4 col-md-12 form-group  mt-md-0" id="Mesto1"hidden>
-            Vasi Komentari
+            <div id='qqq' style="font-size: 30px; text-shadow:2px 2px blue ">Vasi Komentari</div>
             <table id="ZAB1" class="table" style="margin-left: auto; margin-right: auto;">
 
             </table>
@@ -208,6 +208,8 @@
     $('#NoviKomentar').attr('placeholder','Leave your comment here')
     $('#Nesto').text('Bid')
     $('#Cena').attr('placeholder','Leave your offer here')
+    $('#qq').text('Your Offers')
+    $('#qqq').text('Your Comments')
   }
        
         if(localStorage.getItem("Trenutni")==null || localStorage.getItem("Trenutni")==''){
@@ -228,17 +230,17 @@
             sveStvari=JSON.parse(localStorage.getItem('paintings1'))}
             else{sveStvari=JSON.parse(localStorage.getItem('paintings'))}
             trenutni=JSON.parse(localStorage.getItem("Trenutni"));
-            if(Lista==null || Lista.length==0){alert("AAA")}
+            if(Lista==null || Lista.length==0){}
             else{
               for(var i =0;i<Lista.length;i++)
                 if(Lista[i].user==trenutni.username){
                   x=sveStvari.find(stvar=>stvar.id==Lista[i].stvar).name
                   var tr=$("<tr></tr>")
-                  var text="<td style='text-align:center; vertical-align: middle; padding:10px;'>"+x+":</td>"
-                   var text2="<td style='text-align:center; vertical-align: middle; padding:10px;'>" +Lista[i].ponuda+ "</td>"
+                  var text="<td style='text-align:center; vertical-align: middle; padding:10px;text-shadow:2px 2px blue '>"+x+":</td>"
+                   var text2="<td style='text-align:center; vertical-align: middle; padding:10px;font-size:18px'>" +Lista[i].ponuda+ "</td>"
                     var mex="<input type='hidden' id='hidden"+i+"'value='"+x+"'><input type='hidden' id='0hidden"+i+"'value='"+Lista[i].ponuda+"'>"+"</td>";
                     
-                  var dugme=$("<button class='btn btn-outline-secondary'>Ukloni</button>").attr('id',i)
+                  var dugme=$("<button class='btn btn-outline-warning'>Ukloni</button>").attr('id',i)
                   var polje=$("<td></td>").append(dugme);
                   dugme.on({click:function(){
                     id=parseInt($(this).attr('id'));
@@ -252,14 +254,16 @@
                 } 
               
             }
-            if(Komentari==null || Komentari.length==0){alert("AAA")}
+            if(Komentari==null || Komentari.length==0){}
             else{
               for(var i =0;i<Komentari.length;i++)
                 if(Komentari[i].user==trenutni.username){
+                  x=sveStvari.find(stvar=>stvar.id==Komentari[i].stvar).name
                   var tr=$("<tr></tr>")
-                  var text="<td style='text-align:center; vertical-align: middle;'>" +Komentari[i].komentar+ "</td>"
+                  var text2="<td style='text-align:center; vertical-align: middle; padding:10px;text-shadow:2px 2px blue '>"+x+":</td>"
+                  var text="<td style='text-align:center; vertical-align: middle;text-shadow:2px 2px blue '>" +Komentari[i].komentar+ "</td>"
                   
-                  var dugme=$("<button class='btn btn-outline-secondary'>Ukloni</button>").attr('id',i)
+                  var dugme=$("<button class='btn btn-outline-warning'>Ukloni</button>").attr('id',i)
                   var polje=$("<td></td>").append(dugme);
                   dugme.on({click:function(){
                     id=parseInt($(this).attr('id'));
@@ -268,7 +272,7 @@
                     localStorage.setItem("Komentari",JSON.stringify(Lista));
                     location.reload();
                   }})
-                  $("#ZAB1").append(tr).append(text).append(polje);
+                  $("#ZAB1").append(tr).append(text2).append(text).append(polje);
                 } 
               
             }
