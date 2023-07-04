@@ -1894,6 +1894,7 @@ section {
 
 .card-container article h2 {
   margin-bottom: 0.5em;
+  color: #cda45e;
   text-align: center;
 }
 
@@ -2174,7 +2175,7 @@ button.primary {
 
 .googleMaps {
   display: block;
-  margin: 0 auto;
+  margin: 0em auto 2em auto;
   width: 80%;
   height: auto;
 }
@@ -2183,4 +2184,72 @@ button.primary {
   display: block;
   width: 100%;
   height: 30em;
+}
+
+
+/*--------------------------------------------------------------
+#  About us related CSS
+--------------------------------------------------------------*/
+
+
+.eventsFixed {
+  /*background: url(../img/pozadina.jpg) center center no-repeat;*/
+  background: linear-gradient(180deg, rgba(15, 22, 28, 1) 0%, rgba(2, 7, 13, 1) 100%);
+  position: relative;
+  min-height: 100vh;
+  padding-top: 10rem;
+
+}
+
+.eventsContent {
+  z-index: 1000;
+}
+
+.eventsContent article {
+  display: block;
+  width: 65%;
+  margin: 0 auto;
+  padding: 1em;
+  color: #bbb;
+}
+
+.eventsContent article h1 {
+  display: inline-block;
+  font-weight: bold;
+  color: #cda45e;
+  font-size: 3em;
+  border-bottom: 7px solid rgba(0, 0, 24, 0.31);
+}
+
+
+.eventsContent article h2 {
+  display: inline-block;
+  font-weight: bold;
+  color: #cda45e;
+  font-size: 2em;
+  margin: 1em 0em 0.5em 0em;
+  ;
+}
+
+.eventsContent article>p {
+  border-left: 4px solid #aaa;
+  padding-left: 2em;
+  margin: 0em 0em 1em 0em;
+}
+
+.awards .award-single {
+  display: inline-block;
+}
+
+.awards .award-single img {
+  display: block;
+  margin: 0 auto;
+  width: 10em;
+  height: 10em;
+}
+
+.awards .award-single p {
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 1.2em;
 }
